@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2gu-LI-AHP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Second View Controller-->
+        <scene sceneID="06n-nS-EgE">
+            <objects>
+                <viewController storyboardIdentifier="main" id="2gu-LI-AHP" customClass="SecondViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ege-op-mYy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="human_4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hg4-Da-era">
+                                <rect key="frame" x="10" y="94" width="394" height="262.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hg4-Da-era" secondAttribute="height" multiplier="1.5:1" id="NVy-CO-CC6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用时：0s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzN-SP-cIg">
+                                <rect key="frame" x="10" y="406.5" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ah-rQ-rJI">
+                                <rect key="frame" x="10" y="477.5" width="46" height="30"/>
+                                <state key="normal" title="下一张"/>
+                                <connections>
+                                    <action selector="nextButtonClick:" destination="2gu-LI-AHP" eventType="touchUpInside" id="7GC-mZ-8os"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gz-sz-Jqm">
+                                <rect key="frame" x="10" y="557.5" width="31" height="30"/>
+                                <state key="normal" title="开始"/>
+                                <connections>
+                                    <action selector="startButtonClick:" destination="2gu-LI-AHP" eventType="touchUpInside" id="9Bp-Kd-JuJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lio-Up-asx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hg4-Da-era" firstAttribute="top" secondItem="lio-Up-asx" secondAttribute="top" constant="50" id="0e7-de-KGk"/>
+                            <constraint firstItem="8gz-sz-Jqm" firstAttribute="top" secondItem="4ah-rQ-rJI" secondAttribute="bottom" constant="50" id="4e6-Xc-TOe"/>
+                            <constraint firstItem="4ah-rQ-rJI" firstAttribute="leading" secondItem="hg4-Da-era" secondAttribute="leading" id="8lg-3S-5Up"/>
+                            <constraint firstItem="VzN-SP-cIg" firstAttribute="top" secondItem="hg4-Da-era" secondAttribute="bottom" constant="50" id="VsL-8d-3Xt"/>
+                            <constraint firstItem="8gz-sz-Jqm" firstAttribute="leading" secondItem="hg4-Da-era" secondAttribute="leading" id="W5M-mM-6NQ"/>
+                            <constraint firstItem="VzN-SP-cIg" firstAttribute="leading" secondItem="hg4-Da-era" secondAttribute="leading" id="bC0-Fs-xhk"/>
+                            <constraint firstItem="4ah-rQ-rJI" firstAttribute="top" secondItem="VzN-SP-cIg" secondAttribute="bottom" constant="50" id="fE8-qk-M1w"/>
+                            <constraint firstItem="lio-Up-asx" firstAttribute="trailing" secondItem="hg4-Da-era" secondAttribute="trailing" constant="10" id="g50-LM-5GB"/>
+                            <constraint firstItem="hg4-Da-era" firstAttribute="leading" secondItem="lio-Up-asx" secondAttribute="leading" constant="10" id="p2I-jE-GcJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="hg4-Da-era" id="ty6-Th-yat"/>
+                        <outlet property="timeLabel" destination="VzN-SP-cIg" id="SS2-xW-rTU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dMN-ko-Eu7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="human_4.jpg" width="828" height="454"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

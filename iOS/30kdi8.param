@@ -1,0 +1,54 @@
+7767517
+52 56
+Input                    data                     0 1 data 0=320 1=320 2=3
+Convolution              conv0                    1 1 data conv0_conv0/relu 0=32 1=3 3=2 4=1 5=1 6=864 8=2 9=1
+ConvolutionDepthWise     conv1/dw                 1 1 conv0_conv0/relu conv1/dw_conv1/dw/relu 0=32 1=3 4=1 5=1 6=288 7=32 8=1 9=1
+Convolution              conv1                    1 1 conv1/dw_conv1/dw/relu conv1_conv1/relu 0=64 1=1 5=1 6=2048 8=2 9=1
+ConvolutionDepthWise     conv2/dw                 1 1 conv1_conv1/relu conv2/dw_conv2/dw/relu 0=64 1=3 3=2 4=1 5=1 6=576 7=64 8=1 9=1
+Convolution              conv2                    1 1 conv2/dw_conv2/dw/relu conv2_conv2/relu 0=128 1=1 5=1 6=8192 8=2 9=1
+ConvolutionDepthWise     conv3/dw                 1 1 conv2_conv2/relu conv3/dw_conv3/dw/relu 0=128 1=3 4=1 5=1 6=1152 7=128 8=1 9=1
+Convolution              conv3                    1 1 conv3/dw_conv3/dw/relu conv3_conv3/relu 0=128 1=1 5=1 6=16384 8=2 9=1
+ConvolutionDepthWise     conv4/dw                 1 1 conv3_conv3/relu conv4/dw_conv4/dw/relu 0=128 1=3 4=1 5=1 6=1152 7=128 8=1 9=1
+Convolution              conv4_halv               1 1 conv4/dw_conv4/dw/relu conv4_halv_conv4_halv/relu 0=128 1=1 5=1 6=16384 8=2 9=1
+ConvolutionDepthWise     conv5_halv/dw            1 1 conv4_halv_conv4_halv/relu conv5_halv/dw_conv5_halv/dw/relu 0=128 1=3 4=1 5=1 6=1152 7=128 8=1 9=1
+Convolution              conv5_halv               1 1 conv5_halv/dw_conv5_halv/dw/relu conv5_halv_conv5_halv/relu 0=128 1=1 5=1 6=16384 8=2 9=1
+ConvolutionDepthWise     conv6_halv/dw            1 1 conv5_halv_conv5_halv/relu conv6_halv/dw_conv6_halv/dw/relu 0=128 1=3 3=2 4=1 5=1 6=1152 7=128 8=1 9=1
+Convolution              conv6_halv               1 1 conv6_halv/dw_conv6_halv/dw/relu conv6_halv_conv6_halv/relu 0=256 1=1 5=1 6=32768 8=2 9=1
+ConvolutionDepthWise     conv7_halv/dw            1 1 conv6_halv_conv6_halv/relu conv7_halv/dw_conv7_halv/dw/relu 0=256 1=3 4=1 5=1 6=2304 7=256 8=1 9=1
+Convolution              conv7_halv               1 1 conv7_halv/dw_conv7_halv/dw/relu conv7_halv_conv7_halv/relu 0=256 1=1 5=1 6=65536 8=2 9=1
+ConvolutionDepthWise     conv8_halv/dw            1 1 conv7_halv_conv7_halv/relu conv8_halv/dw_conv8_halv/dw/relu 0=256 1=3 4=1 5=1 6=2304 7=256 8=1 9=1
+Convolution              conv8_halv               1 1 conv8_halv/dw_conv8_halv/dw/relu conv8_halv_conv8_halv/relu 0=256 1=1 5=1 6=65536 8=2 9=1
+Split                    splitncnn_0              1 2 conv8_halv_conv8_halv/relu conv8_halv_conv8_halv/relu_splitncnn_0 conv8_halv_conv8_halv/relu_splitncnn_1
+ConvolutionDepthWise     conv9_halv/dw            1 1 conv8_halv_conv8_halv/relu_splitncnn_1 conv9_halv/dw_conv9_halv/dw/relu 0=256 1=3 3=2 4=1 5=1 6=2304 7=256 8=1 9=1
+Convolution              conv9_halv               1 1 conv9_halv/dw_conv9_halv/dw/relu conv9_halv_conv9_halv/relu 0=512 1=1 5=1 6=131072 8=2 9=1
+ConvolutionDepthWise     conv10/dw                1 1 conv9_halv_conv9_halv/relu conv10/dw_conv10/dw/relu 0=512 1=3 4=1 5=1 6=4608 7=512 8=1 9=1
+Convolution              conv10                   1 1 conv10/dw_conv10/dw/relu conv10_conv10/relu 0=512 1=1 5=1 6=262144 8=2 9=1
+ConvolutionDepthWise     conv11/dw                1 1 conv10_conv10/relu conv11/dw_conv11/dw/relu 0=512 1=3 4=1 5=1 6=4608 7=512 8=1 9=1
+Convolution              conv11                   1 1 conv11/dw_conv11/dw/relu conv11_conv11/relu 0=512 1=1 5=1 6=262144 8=2 9=1
+Split                    splitncnn_1              1 2 conv11_conv11/relu conv11_conv11/relu_splitncnn_0 conv11_conv11/relu_splitncnn_1
+ConvolutionDepthWise     conv12/dw                1 1 conv11_conv11/relu_splitncnn_1 conv12/dw_conv12/dw/relu 0=512 1=3 3=2 4=1 5=1 6=4608 7=512 8=1 9=1
+Convolution              conv12                   1 1 conv12/dw_conv12/dw/relu conv12_conv12/relu 0=1024 1=1 5=1 6=524288 8=2 9=1
+ConvolutionDepthWise     conv13/dw                1 1 conv12_conv12/relu conv13/dw_conv13/dw/relu 0=1024 1=3 4=1 5=1 6=9216 7=1024 8=1 9=1
+Convolution              conv13                   1 1 conv13/dw_conv13/dw/relu conv13_conv13/relu 0=1024 1=1 5=1 6=1048576 8=2 9=1
+ConvolutionDepthWise     conv15_new/dw            1 1 conv13_conv13/relu conv15_new/dw_conv15_new/dw/relu 0=1024 1=3 4=1 5=1 6=9216 7=1024 8=1 9=1
+Convolution              conv15_new_new           1 1 conv15_new/dw_conv15_new/dw/relu conv15_new_new_conv15_new/relu 0=512 1=1 5=1 6=524288 8=2 9=1
+Split                    splitncnn_2              1 2 conv15_new_new_conv15_new/relu conv15_new_new_conv15_new/relu_splitncnn_0 conv15_new_new_conv15_new/relu_splitncnn_1
+Interp                   upsample_new             1 1 conv15_new_new_conv15_new/relu_splitncnn_1 upsample_new 0=2 1=2.000000 2=2.000000 3=20 4=20
+Pooling                  maxpool                  1 1 upsample_new maxpool 1=3 3=1
+ConvolutionDepthWise     conv17/dw                1 1 conv11_conv11/relu_splitncnn_0 conv17/dw_conv17/dw/relu 0=512 1=3 4=1 5=1 6=4608 7=512 8=1 9=1
+Convolution              conv17                   1 1 conv17/dw_conv17/dw/relu conv17_conv17/relu 0=512 1=1 5=1 6=262144 8=2 9=1
+Eltwise                  conv17/sum               2 1 maxpool conv17_conv17/relu conv17/sum 0=1
+ConvolutionDepthWise     conv18/dw                1 1 conv17/sum conv18/dw_conv18/dw/relu 0=512 1=3 4=1 5=1 6=4608 7=512 8=1 9=1
+Convolution              conv18                   1 1 conv18/dw_conv18/dw/relu conv18_conv18/relu 0=256 1=1 5=1 6=131072 8=2 9=1
+Split                    splitncnn_3              1 2 conv18_conv18/relu conv18_conv18/relu_splitncnn_0 conv18_conv18/relu_splitncnn_1
+Convolution              conv19_new               1 1 conv15_new_new_conv15_new/relu_splitncnn_0 conv19_new 0=18 1=1 5=1 6=9216 8=2
+Convolution              conv20_new               1 1 conv18_conv18/relu_splitncnn_1 conv20_new 0=18 1=1 5=1 6=4608 8=2
+Interp                   upsample_new_1           1 1 conv18_conv18/relu_splitncnn_0 upsample_new_1 0=2 1=2.000000 2=2.000000 3=40 4=40
+Pooling                  maxpool_1                1 1 upsample_new_1 maxpool_1 1=3 3=1
+ConvolutionDepthWise     conv25/dw                1 1 conv8_halv_conv8_halv/relu_splitncnn_0 conv25/dw_conv25/dw/relu 0=256 1=3 4=1 5=1 6=2304 7=256 8=1 9=1
+Convolution              conv25                   1 1 conv25/dw_conv25/dw/relu conv25_conv25/relu 0=256 1=1 5=1 6=65536 8=2 9=1
+Eltwise                  conv25/sum               2 1 maxpool_1 conv25_conv25/relu conv25/sum 0=1
+ConvolutionDepthWise     conv26/dw                1 1 conv25/sum conv26/dw_conv26/dw/relu 0=256 1=3 4=1 5=1 6=2304 7=256 8=1 9=1
+Convolution              conv26_new               1 1 conv26/dw_conv26/dw/relu conv26_new_conv26_new/relu 0=256 1=1 5=1 6=65536 8=2 9=1
+Convolution              conv27                   1 1 conv26_new_conv26_new/relu conv27 0=18 1=1 5=1 6=4608 8=2
+Yolov3DetectionOutput    detection_out            3 1 conv19_new conv20_new conv27 detection_out 0=1 1=3 2=0.550000 -23304=18,10.000000,13.000000,16.000000,30.000000,33.000000,23.000000,30.000000,61.000000,62.000000,45.000000,59.000000,119.000000,116.000000,90.000000,156.000000,198.000000,373.000000,326.000000 -23305=9,1086324736,1088421888,1090519040,1077936128,1082130432,1084227584,0,1065353216,1073741824 -23306=3,32.000000,16.000000,8.000000
